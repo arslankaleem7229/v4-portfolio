@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -164,8 +164,30 @@ const StyledTabPanel = styled.div`
   }
 `;
 
-const Jobs = ({ jobs }) => {
-  const jobsData = jobs || [];
+const Jobs = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      jobs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              company
+              location
+              range
+              url
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
+  const jobsData = data.jobs.edges;
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -174,14 +196,14 @@ const Jobs = ({ jobs }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion || !sr) {
+    if (prefersReducedMotion) {
       return;
     }
 
     sr.reveal(revealContainer.current, srConfig());
-  }, [prefersReducedMotion]);
+  }, []);
 
-  const focusTab = useCallback(() => {
+  const focusTab = () => {
     if (tabs.current[tabFocus]) {
       tabs.current[tabFocus].focus();
       return;
@@ -194,10 +216,10 @@ const Jobs = ({ jobs }) => {
     if (tabFocus < 0) {
       setTabFocus(tabs.current.length - 1);
     }
-  }, [tabFocus]);
+  };
 
   // Only re-run the effect if tabFocus changes
-  useEffect(() => focusTab(), [tabFocus, focusTab]);
+  useEffect(() => focusTab(), [tabFocus]);
 
   // Focus on tabs when using up & down arrow keys
   const onKeyDown = e => {
@@ -227,27 +249,31 @@ const Jobs = ({ jobs }) => {
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
-            jobsData.map((job, i) => (
-              <StyledTabButton
-                key={i}
-                isActive={activeTabId === i}
-                onClick={() => setActiveTabId(i)}
-                ref={el => (tabs.current[i] = el)}
-                id={`tab-${i}`}
-                role="tab"
-                tabIndex={activeTabId === i ? '0' : '-1'}
-                aria-selected={activeTabId === i ? true : false}
-                aria-controls={`panel-${i}`}>
-                <span>{job.company}</span>
-              </StyledTabButton>
-            ))}
+            jobsData.map(({ node }, i) => {
+              const { company } = node.frontmatter;
+              return (
+                <StyledTabButton
+                  key={i}
+                  isActive={activeTabId === i}
+                  onClick={() => setActiveTabId(i)}
+                  ref={el => (tabs.current[i] = el)}
+                  id={`tab-${i}`}
+                  role="tab"
+                  tabIndex={activeTabId === i ? '0' : '-1'}
+                  aria-selected={activeTabId === i ? true : false}
+                  aria-controls={`panel-${i}`}>
+                  <span>{company}</span>
+                </StyledTabButton>
+              );
+            })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
           {jobsData &&
-            jobsData.map((job, i) => {
-              const { title, url, company, range, html } = job;
+            jobsData.map(({ node }, i) => {
+              const { frontmatter, html } = node;
+              const { title, url, company, range } = frontmatter;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -282,7 +308,3 @@ const Jobs = ({ jobs }) => {
 };
 
 export default Jobs;
-
-Jobs.propTypes = {
-  jobs: PropTypes.array.isRequired,
-};

@@ -1,15 +1,12 @@
 ---
-date: '2023-06-01'
-title: 'Customer Engagement & Revenue Analysis'
-external: 'https://www.linkedin.com/in/arslan-kaleem/'
+date: '2016-01-01'
+title: 'Fontipsums'
+github: 'https://github.com/bchiang7/fontipsums/'
+external: 'http://bchiang7.github.io/fontipsums/'
 tech:
-  - R
-  - CRISP-DM
-  - Machine learning
-  - Tableau
+  - HTML
+  - SCSS
 showInProjects: true
 ---
 
-Applied the CRISP-DM framework to analyse customer conversion sessions, built machine learning
-models in R to uncover revenue drivers, and delivered Tableau visualisations that guided marketing
-optimisation strategies.
+Simple website to display some of my favorite font pairings combined with some fun lorem ipsum variations found on the web.

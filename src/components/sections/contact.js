@@ -46,12 +46,12 @@ const Contact = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion || !sr) {
+    if (prefersReducedMotion) {
       return;
     }
 
     sr.reveal(revealContainer.current, srConfig());
-  }, [prefersReducedMotion]);
+  }, []);
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
@@ -60,8 +60,8 @@ const Contact = () => {
       <h2 className="title">Get In Touch</h2>
 
       <p>
-        I’m open to data analytics and software engineering work — whether you need dashboards,
-        product experiments, or a full-stack partner. Drop a note and I’ll get back to you.
+        Although I’m not currently looking for any new opportunities, my inbox is always open.
+        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>

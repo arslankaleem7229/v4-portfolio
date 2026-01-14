@@ -1,42 +1,49 @@
 import { css } from 'styled-components';
 
-const fontPath = (family, file) => `/fonts/${family}/${file}`;
+import CalibreRegularWoff from '@fonts/Calibre/Calibre-Regular.woff';
+import CalibreRegularWoff2 from '@fonts/Calibre/Calibre-Regular.woff2';
+import CalibreMediumWoff from '@fonts/Calibre/Calibre-Medium.woff';
+import CalibreMediumWoff2 from '@fonts/Calibre/Calibre-Medium.woff2';
+import CalibreSemiboldWoff from '@fonts/Calibre/Calibre-Semibold.woff';
+import CalibreSemiboldWoff2 from '@fonts/Calibre/Calibre-Semibold.woff2';
+
+import CalibreRegularItalicWoff from '@fonts/Calibre/Calibre-RegularItalic.woff';
+import CalibreRegularItalicWoff2 from '@fonts/Calibre/Calibre-RegularItalic.woff2';
+import CalibreMediumItalicWoff from '@fonts/Calibre/Calibre-MediumItalic.woff';
+import CalibreMediumItalicWoff2 from '@fonts/Calibre/Calibre-MediumItalic.woff2';
+import CalibreSemiboldItalicWoff from '@fonts/Calibre/Calibre-SemiboldItalic.woff';
+import CalibreSemiboldItalicWoff2 from '@fonts/Calibre/Calibre-SemiboldItalic.woff2';
+
+import SFMonoRegularWoff from '@fonts/SFMono/SFMono-Regular.woff';
+import SFMonoRegularWoff2 from '@fonts/SFMono/SFMono-Regular.woff2';
+import SFMonoSemiboldWoff from '@fonts/SFMono/SFMono-Semibold.woff';
+import SFMonoSemiboldWoff2 from '@fonts/SFMono/SFMono-Semibold.woff2';
+
+import SFMonoRegularItalicWoff from '@fonts/SFMono/SFMono-RegularItalic.woff';
+import SFMonoRegularItalicWoff2 from '@fonts/SFMono/SFMono-RegularItalic.woff2';
+import SFMonoSemiboldItalicWoff from '@fonts/SFMono/SFMono-SemiboldItalic.woff';
+import SFMonoSemiboldItalicWoff2 from '@fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
 const calibreNormalWeights = {
-  400: [fontPath('Calibre', 'Calibre-Regular.woff'), fontPath('Calibre', 'Calibre-Regular.woff2')],
-  500: [fontPath('Calibre', 'Calibre-Medium.woff'), fontPath('Calibre', 'Calibre-Medium.woff2')],
-  600: [fontPath('Calibre', 'Calibre-Semibold.woff'), fontPath('Calibre', 'Calibre-Semibold.woff2')],
+  400: [CalibreRegularWoff, CalibreRegularWoff2],
+  500: [CalibreMediumWoff, CalibreMediumWoff2],
+  600: [CalibreSemiboldWoff, CalibreSemiboldWoff2],
 };
 
 const calibreItalicWeights = {
-  400: [
-    fontPath('Calibre', 'Calibre-RegularItalic.woff'),
-    fontPath('Calibre', 'Calibre-RegularItalic.woff2'),
-  ],
-  500: [
-    fontPath('Calibre', 'Calibre-MediumItalic.woff'),
-    fontPath('Calibre', 'Calibre-MediumItalic.woff2'),
-  ],
-  600: [
-    fontPath('Calibre', 'Calibre-SemiboldItalic.woff'),
-    fontPath('Calibre', 'Calibre-SemiboldItalic.woff2'),
-  ],
+  400: [CalibreRegularItalicWoff, CalibreRegularItalicWoff2],
+  500: [CalibreMediumItalicWoff, CalibreMediumItalicWoff2],
+  600: [CalibreSemiboldItalicWoff, CalibreSemiboldItalicWoff2],
 };
 
 const sfMonoNormalWeights = {
-  400: [fontPath('SFMono', 'SFMono-Regular.woff'), fontPath('SFMono', 'SFMono-Regular.woff2')],
-  600: [fontPath('SFMono', 'SFMono-Semibold.woff'), fontPath('SFMono', 'SFMono-Semibold.woff2')],
+  400: [SFMonoRegularWoff, SFMonoRegularWoff2],
+  600: [SFMonoSemiboldWoff, SFMonoSemiboldWoff2],
 };
 
 const sfMonoItalicWeights = {
-  400: [
-    fontPath('SFMono', 'SFMono-RegularItalic.woff'),
-    fontPath('SFMono', 'SFMono-RegularItalic.woff2'),
-  ],
-  600: [
-    fontPath('SFMono', 'SFMono-SemiboldItalic.woff'),
-    fontPath('SFMono', 'SFMono-SemiboldItalic.woff2'),
-  ],
+  400: [SFMonoRegularItalicWoff, SFMonoRegularItalicWoff2],
+  600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2],
 };
 
 const calibre = {

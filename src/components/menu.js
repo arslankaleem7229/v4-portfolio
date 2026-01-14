@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Link from 'next/link';
 import { navLinks } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
@@ -229,21 +230,17 @@ const Menu = () => {
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle('blur', menuOpen);
-    return () => {
-      document.body.classList.remove('blur');
-    };
-  }, [menuOpen]);
 
   const wrapperRef = useRef();
   useOnClickOutside(wrapperRef, () => setMenuOpen(false));
 
   return (
     <StyledMenu>
+      <Helmet>
+        <body className={menuOpen ? 'blur' : ''} />
+      </Helmet>
+
       <div ref={wrapperRef}>
         <StyledHamburgerButton
           onClick={toggleMenu}
@@ -261,7 +258,7 @@ const Menu = () => {
               <ol>
                 {navLinks.map(({ url, name }, i) => (
                   <li key={i}>
-                    <Link href={url} onClick={() => setMenuOpen(false)}>
+                    <Link to={url} onClick={() => setMenuOpen(false)}>
                       {name}
                     </Link>
                   </li>

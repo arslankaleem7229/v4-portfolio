@@ -1,11 +1,6 @@
-let sr;
+import ScrollReveal from 'scrollreveal';
 
-if (typeof window !== 'undefined') {
-  // eslint-disable-next-line global-require
-  const ScrollReveal = require('scrollreveal').default;
-  sr = ScrollReveal();
-} else {
-  sr = null;
-}
+const isSSR = typeof window === 'undefined';
+const sr = isSSR ? null : ScrollReveal();
 
 export default sr;

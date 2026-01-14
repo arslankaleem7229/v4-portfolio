@@ -1,12 +1,12 @@
 ---
-date: '2025-12-01'
-title: 'Volunteer Flutter & Node Developer'
-company: 'Cherry CIC'
-location: 'Remote, UK'
-range: 'Dec 2025 - Present'
-url: 'https://cherry.org.uk/'
+date: '2015-12-21'
+title: 'Creative Technologist Co-op'
+company: 'MullenLowe'
+location: 'Boston, MA'
+range: 'July - December 2015'
+url: 'https://us.mullenlowe.com/'
 ---
 
-- Contributing to an open-source nonprofit marketplace that lets users buy and sell second-hand clothing with proceeds donated to registered charities.
-- Building a cross-platform mobile app in Flutter for iOS and Android alongside Node.js/Express backend services to support core platform features.
-- Collaborating with a distributed team of 20+ volunteers on GitHub to promote sustainable fashion and charitable giving.
+- Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery
+- Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness
+- Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more

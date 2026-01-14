@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import PropTypes from 'prop-types';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -166,7 +165,31 @@ const StyledProject = styled.li`
   }
 `;
 
-const Projects = ({ projects }) => {
+const Projects = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      projects: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/content/projects/" }
+          frontmatter: { showInProjects: { ne: false } }
+        }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              tech
+              github
+              external
+            }
+            html
+          }
+        }
+      }
+    }
+  `);
+
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
@@ -174,22 +197,23 @@ const Projects = ({ projects }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion || !sr) {
+    if (prefersReducedMotion) {
       return;
     }
 
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, [prefersReducedMotion]);
+  }, []);
 
   const GRID_LIMIT = 6;
+  const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
   const projectInner = node => {
-    if (!node) return null;
-    const { github, external, title, tech = [], html } = node;
+    const { frontmatter, html } = node;
+    const { github, external, title, tech } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -243,7 +267,7 @@ const Projects = ({ projects }) => {
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
 
-      <Link className="inline-link archive-link" href="/archive" ref={revealArchiveLink}>
+      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive
       </Link>
 
@@ -251,14 +275,14 @@ const Projects = ({ projects }) => {
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&
-              projectsToShow.map((project, i) => (
-                <StyledProject key={i}>{projectInner(project)}</StyledProject>
+              projectsToShow.map(({ node }, i) => (
+                <StyledProject key={i}>{projectInner(node)}</StyledProject>
               ))}
           </>
         ) : (
           <TransitionGroup component={null}>
             {projectsToShow &&
-              projectsToShow.map((project, i) => (
+              projectsToShow.map(({ node }, i) => (
                 <CSSTransition
                   key={i}
                   classNames="fadeup"
@@ -270,7 +294,7 @@ const Projects = ({ projects }) => {
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                     }}>
-                    {projectInner(project)}
+                    {projectInner(node)}
                   </StyledProject>
                 </CSSTransition>
               ))}
@@ -286,7 +310,3 @@ const Projects = ({ projects }) => {
 };
 
 export default Projects;
-
-Projects.propTypes = {
-  projects: PropTypes.array.isRequired,
-};

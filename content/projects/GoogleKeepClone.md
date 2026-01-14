@@ -1,15 +1,12 @@
 ---
-date: '2023-09-01'
-title: 'AI Impact on Developer Productivity'
-external: 'https://arslankaleem.vercel.app'
+date: '2018-12-29'
+title: 'Google Keep Clone'
+github: 'https://github.com/bchiang7/google-keep-vue-firebase'
+external: 'https://keep-vue.netlify.com/'
 tech:
-  - Python
-  - scikit-learn
-  - Feature engineering
-  - Predictive analytics
+  - Vue
+  - Firebase
 showInProjects: true
 ---
 
-Built supervised learning and anomaly detection models to quantify how AI tooling influences
-developer productivity. Engineered feature extraction across software practices to forecast where
-automation delivers the biggest gains.
+A simple Google Keep clone built with Vue and Firebase.

@@ -1,17 +1,15 @@
 ---
 date: '2'
-title: 'AI Impact on Developer Productivity'
+title: 'Spotify Profile'
 cover: './demo.png'
-external: 'https://arslankaleem.vercel.app'
+github: 'https://github.com/bchiang7/spotify-profile'
+external: 'https://spotify-profile.herokuapp.com/'
 tech:
-  - Python
-  - scikit-learn
-  - Pandas
-  - Predictive analytics
-  - Anomaly detection
-  - Data visualization
+  - React
+  - Styled Components
+  - Express
+  - Spotify API
+  - Heroku
 ---
 
-Graduate research that quantified how AI adoption shifts software development efficiency. Built
-supervised learning and anomaly detection models with feature pipelines across engineering
-practices to forecast productivity changes and surface where automation delivers the most value.
+A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.

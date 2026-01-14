@@ -1,15 +1,13 @@
 ---
-date: '2025-03-01'
-title: 'Civil Enforcement Performance Insights'
-external: 'https://marstonholdings.co.uk/nsl/'
+date: '2019-07-15'
+title: 'OctoProfile'
+github: 'https://github.com/bchiang7/octoprofile'
+external: 'https://octoprofile.now.sh'
 tech:
-  - Power BI
-  - SQL/DAX
-  - Geospatial mapping
-  - Data storytelling
+  - Next.js
+  - Chart.js
+  - GitHub API
 showInProjects: true
 ---
 
-Power BI reporting suite monitoring daily KPIs for 20+ Civil Enforcement Officers. Combines patrol
-data, contravention hotspots, and safety flags to optimise routes, surface coaching needs, and cut
-invalid PCN rates by 15%.
+A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories, and sort through your top repos by number of stars, forks, and size.

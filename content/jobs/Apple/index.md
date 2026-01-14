@@ -1,13 +1,13 @@
 ---
-date: '2024-03-01'
-title: 'Operational Analyst'
-company: 'Marks & Spencer'
-location: 'Guildford, England, UK'
-range: 'Mar 2024 - Jan 2025'
-url: 'https://marksandspencer.com/'
+date: '2017-12-21'
+title: 'UI Engineer Co-op'
+company: 'Apple'
+location: 'Cupertino, CA'
+range: 'July - December 2017'
+url: 'https://www.apple.com/music/'
 ---
 
-- Built a Power BI dashboard to visualise daily sales across 500+ SKUs, comparing actuals vs forecasts to flag slow-moving stock and reduce inventory.
-- Coordinated inventory allocation for promotional campaigns to maintain shelf availability during peak trading periods.
-- Identified restocking inefficiencies and process improvements, cutting replenishment time by 20% on high-traffic days like Sundays.
-- Analysed selling rates and waste metrics, providing insights that improved stock turnover and reduced food wastage.
+- Developed and styled interactive web applications for Apple Music using Ember and SCSS
+- Built and shipped the Apple Music Extension for Facebook Messenger leveraging third-party and internal API integrations
+- Architected and implemented the user interface of Apple Music's embeddable web player widget for in-browser user authorization and full song playback
+- Contributed extensively to the creation of MusicKit JS, a public-facing JavaScript SDK for embedding Apple Music players into web applications
