@@ -1,15 +1,15 @@
 ---
-date: '2016-11-01'
-title: 'Screentime 2.0'
-github: ''
-external: 'https://starry.com/blog/product/whats-new-screentime-just-got-better-for-parents'
-android: 'https://play.google.com/store/apps/details?id=com.starry.management&hl=en_US'
+date: '2024-05-01'
+title: 'Retail Sales & Waste Dashboard'
+external: 'https://marksandspencer.com/'
 tech:
-  - Cordova
-  - Backbone
-  - Marionette
-company: 'Starry'
+  - Power BI
+  - Forecast vs actuals
+  - Inventory optimisation
+  - SQL/DAX
 showInProjects: true
 ---
 
-Starry Station android app feature that provided users with the ability to easily filter content, pause the internet, and even create custom rules for blocking apps like Facebook and Twitter right from their phones.
+Power BI dashboard that visualised daily sales across 500+ SKUs, comparing actuals vs forecasts to
+flag slow-moving stock. Provided replenishment and waste insights that cut restock time by 20% and
+improved stock turnover on high-traffic days.

@@ -1,14 +1,15 @@
 ---
-date: '2020-01-10'
-title: 'Time to Have More Fun'
-github: 'https://github.com/bchiang7/time-to-have-more-fun'
-external: 'https://time-to-have-more-fun.now.sh/'
+date: '2023-04-01'
+title: 'HR Analytics Dashboard'
+external: 'https://www.linkedin.com/in/arslan-kaleem/'
 tech:
-  - Next.js
-  - Tailwind CSS
-  - Firebase
-company: ''
+  - R
+  - Tableau
+  - People analytics
+  - Data storytelling
 showInProjects: true
 ---
 
-A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS
+Analysed employee productivity patterns, turnover factors, and the gender pay gap using R, then
+built interactive Tableau dashboards to give HR leaders actionable insights for staffing and
+retention.

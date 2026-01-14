@@ -1,13 +1,12 @@
 ---
-date: '2018-05-14'
-title: 'Lead Engineer'
-company: 'Upstatement'
-location: 'Boston, MA'
-range: 'May 2018 - Present'
-url: 'https://www.upstatement.com/'
+date: '2025-01-01'
+title: 'Performance Analyst'
+company: 'NSL (Surrey County Council)'
+location: 'Guildford, England, UK'
+range: 'Jan 2025 - Present'
+url: 'https://marstonholdings.co.uk/nsl/'
 ---
 
-- Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more
-- Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements
-- Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders
-- Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship
+- Built a Power BI performance dashboard for 20+ Civil Enforcement Officers to spotlight top performers and flag at-risk staff for targeted coaching.
+- Mapped contravention hotspots and high-risk locations to optimise patrol routes and safety protocols, increasing PCN issuance by 20% while keeping CEOs safe.
+- Reduced invalid PCN rates by 15% by surfacing error patterns and recommending focused training interventions.

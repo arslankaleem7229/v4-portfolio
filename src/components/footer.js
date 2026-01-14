@@ -77,7 +77,7 @@ const Footer = () => {
     if (process.env.NODE_ENV !== 'production') {
       return;
     }
-    fetch('https://api.github.com/repos/bchiang7/v4')
+    fetch('https://api.github.com/repos/arslankaleem7229/v4-portfolio')
       .then(response => response.json())
       .then(json => {
         const { stargazers_count, forks_count } = json;
@@ -104,9 +104,9 @@ const Footer = () => {
         </ul>
       </StyledSocialLinks>
 
-      <StyledCredit tabindex="-1">
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+      <StyledCredit tabIndex="-1">
+        <a href="https://github.com/arslankaleem7229">
+          <div>Designed &amp; Built by Arslan Kaleem</div>
 
           {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">

@@ -1,13 +1,15 @@
 ---
-date: '2015-12-20'
-title: 'NU Women in Tech'
-github: 'https://github.com/nuwit/website'
-external: 'https://nuwit.ccs.neu.edu/'
+date: '2023-02-01'
+title: 'Insurance Customer Profiling'
+external: 'https://www.linkedin.com/in/arslan-kaleem/'
 tech:
-  - Jekyll
-  - Bootstrap
-company: 'Northeastern'
+  - IBM SPSS Modeler
+  - Tableau/Power BI
+  - ROI analysis
+  - Segmentation
 showInProjects: true
 ---
 
-Complete overhaul and redesign of NU Women in Tech’s club website using Jekyll, built while serving as web chair on the e-board.
+Built customer profiles and policy targeting strategies using IBM SPSS Modeler. Calculated ROI
+metrics and produced Tableau/Power BI visualisations that helped optimise marketing focus and
+targeting.

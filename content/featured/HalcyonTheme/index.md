@@ -1,15 +1,18 @@
 ---
 date: '1'
-title: 'Halcyon Theme'
+title: 'Patient Management Platform'
 cover: './halcyon.png'
-github: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
+external: 'https://totalhealthdentalcare.com/'
 tech:
-  - VS Code
-  - Sublime Text
-  - Atom
-  - iTerm2
-  - Hyper
+  - Next.js
+  - Node.js/Express
+  - AWS (EC2, S3, Lambda)
+  - PostgreSQL
+  - REST APIs
+  - CI/CD (Jenkins, GitHub Actions)
 ---
 
-A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+Architected and delivered a full patient management platform serving 5,000+ daily active users.
+Reduced scheduling time by 30% with a responsive Next.js frontend, server-side rendering for SEO,
+and real-time appointment synchronisation. Deployed on AWS with JWT/RBAC security for HIPAA
+compliance and automated CI/CD.

@@ -20,6 +20,18 @@ const PrismStyles = css`
   * Add back the container background-color, border-radius, padding, margin
   * and overflow that we removed from <pre>.
   */
+  pre[class*='language-'] {
+    background-color: ${prismColors.bg};
+    color: ${prismColors.grey};
+    border-radius: var(--border-radius);
+    margin: 2em 0;
+    padding: 1.25em;
+    overflow: auto;
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+  }
+
   .gatsby-highlight {
     background-color: ${prismColors.bg};
     color: ${prismColors.grey};
@@ -60,6 +72,14 @@ const PrismStyles = css`
     float: left; /* 1 */
     min-width: 100%; /* 2 */
     padding-top: 2em;
+  }
+
+  pre[class*='language-'] code {
+    font-size: var(--fz-sm);
+    line-height: 1.5;
+    white-space: pre;
+    tab-size: 2;
+    hyphens: none;
   }
 
   /* File names */
